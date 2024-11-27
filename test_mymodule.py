@@ -2,7 +2,7 @@
 import unittest
 
 # Import the 'square' and 'double' functions from the 'mymodule' module.
-from mymodule import square, double
+from mymodule import square, double, add
 
 # Define a test case class for testing the 'square' function.
 # A test case is a single unit of testing. It checks a specific aspect of the code's behavior.
@@ -39,7 +39,10 @@ class TestDouble(unittest.TestCase):
         # Check that calling 'double(0)' returns 0.
         # This tests if the function correctly computes double of 0, verifying that the function works for edge cases.
         self.assertEqual(double(0), 0) # test when 0 is given as input the output is 0.
-        
+    def test3(self):
+        self.assertEqual(add(2, 4), 6)
+        self.assertEqual(add("hello", "world"), "helloworld" )
+        self.assertEqual(add(0, 0), 0)
 # Run all the test cases defined in the module when the script is executed.
 # This will automatically discover and run all the test cases defined in the module.
 unittest.main()
